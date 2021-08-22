@@ -20,9 +20,19 @@ const Post = () => {
 
     useEffect(() => {
         if(postId) {
-            const post = PostsService.getPostById(postId);
-            setCurrentPostId(postId);
-            setCurrentPost(post);
+            const data = PostsService.getPostById(postId);
+            if(data instanceof Promise) {
+                data.then((resp) => {
+                    setCurrentPostId(postId);
+                    setCurrentPost(resp);
+                })
+                .catch((err) => {
+                    console.error('Si è verificato un errore', {err})
+                })
+            } else {
+                setCurrentPostId(postId);
+                setCurrentPost(data);
+            }
         }
     }, [postId]);
 
