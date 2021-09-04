@@ -1,11 +1,10 @@
-import { USE_DUMMY_DATA } from './../config';
-import { dummydatalist } from './../dummydata/categories';
+import { dummydatalist } from './categories';
 
 /**
  * A Singleton data store
  */
- let _lastId = USE_DUMMY_DATA ? dummydatalist.reduce((prev, current) => (prev.id > current.id) ? prev : current) : 0;
- let _data = USE_DUMMY_DATA ? dummydatalist : [];
+ let _lastId = dummydatalist.reduce((prev, current) => (prev.id > current.id) ? prev : current);
+ let _data = dummydatalist;
 
  const getAndSetNewIdentifier = () => {
      return ++_lastId;
