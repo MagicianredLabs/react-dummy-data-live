@@ -1,6 +1,6 @@
 import { USE_DUMMY_DATA, constants } from './../config';
 import request from './BaseService'
-import CategoriesStore from './../stores/CategoriesStore';
+import CategoriesStore from './../dummydata/CategoriesStore';
 
 // Simulate POST /categories
 const addCategories = (item) => {

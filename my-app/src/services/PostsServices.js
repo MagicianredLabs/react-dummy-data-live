@@ -1,6 +1,6 @@
 import { USE_DUMMY_DATA, constants } from './../config';
 import request from './BaseService'
-import PostsStore from './../stores/PostsStore';
+import PostsStore from './../dummydata/PostsStore';
 
 // Simulate POST posts
 const addPost = (item) => {
